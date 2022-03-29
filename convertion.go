@@ -52,7 +52,7 @@ func Terbilang(angka float64) string {
 
 func ratus(s string) string {
 	l := len(s)
-	//log.Printf("ratur: ---%s -- %d", s, l)
+	////log.Printf("ratur: ---%s -- %d", s, l)
 
 	if l == 1 {
 		return satuan(s[0:1])
@@ -63,6 +63,7 @@ func ratus(s string) string {
 	return ratusan(s)
 }
 
+//
 func ribu(sNum string) string {
 	sb := strings.Builder{}
 	l := len(sNum)
