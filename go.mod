@@ -1,3 +1,3 @@
-module fyc.com/v1/fyc
+module github.com/MasturFYC/fyc
 
 go 1.17
