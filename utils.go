@@ -34,3 +34,16 @@ func CreateIndonesianDate(date string, isShort bool) string {
 
    return fmt.Sprintf("%02d %s %d", day, GetIndonesianMonthName(int(month-1), isShort), year)
 }
+
+func CreateInvoiceNumber(id int64, date string) string {
+	rom := [12]string{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"}
+
+	t, err := time.Parse("2006-01-02", date[0:10])
+
+	if err != nil {
+		return date[0:10]
+	}
+	year, month, _ := t.Date()
+	return fmt.Sprintf(" %d/INV/SPRS/%s/%d", id, rom[month-1], year)
+	//return fmt.Sprintf(" %05d/INV/SPRS/%s/%d", id, rom[month-1], year)
+}
